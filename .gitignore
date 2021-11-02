@@ -1,0 +1,12 @@
+
+# Dependency directories
+node_modules/
+
+# generated from tsc
+dist
+
+# ignore MacOS generated file
+.DS_Store
+
+# vscode
+.vscode
