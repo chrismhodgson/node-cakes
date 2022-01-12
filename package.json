@@ -1,33 +1,25 @@
 {
   "name": "node-cakes",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/app.js",
   "scripts": {
-    "start": "tsc && node dist/server.js"
+    "build": "tsc",
+    "start": "tsc && node dist/server-express.js",
+    "tslint:fix": "tslint --fix"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chrismhodgson/node-cakes.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chrismhodgson/node-cakes/issues"
-  },
-  "homepage": "https://github.com/chrismhodgson/node-cakes#readme",
   "devDependencies": {
-    "@types/koa": "^2.13.4",
-    "@types/koa-joi-router": "^8.0.3",
-    "@types/koa-json": "^2.0.20",
     "tslint": "^6.1.3",
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "joi": "^17.4.2",
+    "@types/koa": "^2.13.4",
+    "@types/koa-joi-router": "^8.0.0",
+    "@types/koa-json": "^2.0.20",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
     "koa": "^2.13.4",
     "koa-joi-router": "^8.0.0",
-    "koa-json": "^2.0.2"
+    "koa-json": "^2.0.2",
+    "mongoose": "^6.1.2"
   }
 }

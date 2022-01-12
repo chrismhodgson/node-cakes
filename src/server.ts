@@ -1,12 +1,15 @@
-import Koa from 'koa';
-import json from 'koa-json';
-import { cakeRouter } from './api/v1/cake/cake.router';
+import express from 'express';
+import { cakeRouter } from './cake.router';
+import { config } from './common/config';
+import { connectDB } from './common/connect-db';
 
-const app = new Koa();
-app.use(cakeRouter.middleware());
-app.use(json());
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use('/api/v1/cake', cakeRouter);
 
-const port = 3001
-app.listen(port, () => {
-  console.log(`server started on port ${port}`);
+connectDB()
+
+app.listen(config.server.port, () => {
+  console.log(`server started on port ${config.server.port}`);
 });
