@@ -6,13 +6,16 @@ import { addCake } from './service/add-cake.service';
 import { deleteCake } from './service/delete-cake.service';
 import { getCake } from './service/get-cake.service';
 import { getCakes } from './service/get-cakes.service';
+import cors from 'cors'
 
 export const cakeRouter = Router()
+
+cakeRouter.use(cors({ origin: '*' }));
 
 cakeRouter.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const pageNum = parseInt(String(req.query.page)) || 0
-    const pageLimit = parseInt(String(req.query.limit)) || 25
+    const pageLimit = parseInt(String(req.query.limit)) || 0
     const items = await getCakes(pageNum, pageLimit);
     res.status(200).json(items)
   } catch (err) {

@@ -10,7 +10,9 @@ npm i && npm build && docker-compose up
 
 ## Endpoints
 
-Access the routes in your browser at the following base url `http://localhost/api/v1/cake`. Note: You can optionally change the API port from `80` to something else in the docker-compose file
+Runs on port `3001` by default
+
+Access the routes in your browser at the following base url `http://localhost:3001/api/v1/cake`. Note: You can optionally change the API port from `80` to something else in the docker-compose file
 
 - `GET /` - return a paginated set of cakes using optional query string params `page` and `limit` which defaults to 0 and 25 respectively
 - `GET /:id` - return a single cake by id
